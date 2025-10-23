@@ -728,8 +728,8 @@ h6,
   margin-block-start: 40px; }
 
 .section-headings:not(.section-headings-horizontal) .buttons {
-  -webkit-margin-before: 50px;
-  margin-block-start: 50px; }
+  -webkit-margin-before: 30px;
+  margin-block-start: 30px; }
 
 .section-headings-sticky {
   --position: calc(var(--header-height) + 40px);
@@ -2469,7 +2469,7 @@ form textarea {
   --padding-block-bottom: 100px;
   min-height: 100vh;
   -webkit-padding-before: var(--padding-block-start);
-  padding-block-start: var(--padding-block-start);
+  padding-block-start: 240px;
   -webkit-padding-after: var(--padding-block-bottom);
   padding-block-end: var(--padding-block-bottom);
   display: -webkit-box;
@@ -2480,7 +2480,7 @@ form textarea {
   align-items: center;
   position: relative;
   overflow: hidden; }
-
+.hero-banner .text {margin-top:24px;}
 .hero-banner.with-floating-header {
   --padding-block-start: calc(var(--header-height) + 60px + 60px);
   --padding-block-bottom: calc(var(--header-height)); }
@@ -2494,7 +2494,8 @@ form textarea {
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 30px; }
+  gap: 30px;
+margin-top:40px }
 
 .hero-phone-call {
   display: -webkit-box;
@@ -5854,3 +5855,36 @@ footer .social-link:hover {
   .footer-contact {
     -webkit-padding-before: 60px;
     padding-block-start: 60px; } }
+    .w-75 {width:60%; margin:auto}
+  .meet-founder .media-wrap { position: relative; }
+    .floating-badge {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #333435;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(13,110,253,0.12);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .floating-badge .count {
+      background: rgba(255,255,255,0.12);
+      padding: 6px 8px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .floating-badge.badge-top-left { top: -14px; left: -14px; transform: translate(-6px,-6px); }
+    .floating-badge.badge-bottom-right { bottom: -14px; right: -14px; transform: translate(6px,6px); }
+
+    @media (max-width: 767px) {
+      .floating-badge { font-size: 13px; padding: 6px 10px; }
+      .floating-badge.badge-top-left { top: 6px; left: 8px; transform:none; }
+      .floating-badge.badge-bottom-right { bottom: 6px; right: 8px; transform:none; }
+    }

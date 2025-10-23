@@ -229,21 +229,26 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a class="menu-link menu-link-main menu-accrodion" href="#">Who we are</a>
-                    <ul class="dropdown-menu">
+                    <div class="menu-absolute header-submenu submenu-color">
+                       <ul class="list-unstyled">
                       <li><a class="menu-link" href="about.html">About us</a></li>
                       <li><a class="menu-link" href="founder.html">Meet the founder</a></li>
                       <li><a class="menu-link" href="advisory-committee.html">Advisory Committee</a></li>
                     </ul>
+                    </div>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="menu-link menu-link-main menu-accrodion" href="#">What we do</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="menu-link" href="startup-funding.html">Startup Funding</a></li>
-                      <li><a class="menu-link" href="sme-ipo.html">SME IPO</a></li>
-                      <li><a class="menu-link" href="sustainability-consulting.html">Sustainability Consulting</a></li>
-                      <li><a class="menu-link" href="growth-advisory.html">Growth Advisory</a></li>
-                      <li><a class="menu-link" href="entrepreneurial-workshop.html">Entrepreneurial Workshop</a></li>
+                    <div class="menu-absolute header-submenu submenu-color">
+                       <ul class="list-unstyled">
+                      <li class="nav-item"><a class="menu-link" href="startup-funding.html">Startup Funding</a></li>
+                      <li class="nav-item"><a class="menu-link" href="sme-ipo.html">SME IPO</a></li>
+                      <li class="nav-item"><a class="menu-link" href="sustainability-consulting.html">Sustainability Consulting</a></li>
+                      <li class="nav-item"><a class="menu-link" href="growth-advisory.html">Growth Advisory</a></li>
+                      <li class="nav-item"><a class="menu-link" href="entrepreneurial-workshop.html">Entrepreneurial Workshop</a></li>
                     </ul>
+                    </div>
+                   
                   </li>
                   <li class="nav-item dropdown">
                     <a class="menu-link menu-link-main menu-accrodion" href="#">What we think</a>
@@ -729,14 +734,14 @@
             <div class="feature-box">
               
               <h3 class="feature-title">Our Mission</h3>
-              <p class="feature-text">To create an enabling ecosystem where startups and SMEs not only secure funding but also thrive on the foundations of sustainability, innovation, and growth excellence.</p>
+              <p class="feature-text">Build an innovative and sustainable entrepreneurial ecosystem by developing local expertise, sharing knowledge, and fostering inclusivity, grounded in the belief that every business creates equal value and contributes meaningfully to the economy.</p>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="feature-box">
               
               <h3 class="feature-title">Our Vision</h3>
-              <p class="feature-text">To be the most respected consulting partner for startups and SMEs across India and beyond, recognized for shaping businesses into sustainable industry leaders of tomorrow.</p>
+              <p class="feature-text">Be the most trusted partner in entrepreneurial consulting and services, ensuring every entrepreneur has access to affordable and empowering business solutions.</p>
             </div>
           </div>
          
@@ -1127,7 +1132,153 @@
         </div>
       </team-slider>
       </section>  
-      
+      <!-- ...existing code... -->
+<section class="section-padding" id="partner-with-us">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-12">
+
+          <form id="enquiryForm" action="#" method="post" novalidate>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <label style="flex:1 1 48%;">
+                <span class="text-14">Name *</span><br />
+                <input type="text" name="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;" />
+              </label>
+
+              <label style="flex:1 1 48%;">
+                <span class="text-14">Email *</span><br />
+                <input type="email" name="email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;" />
+              </label>
+
+              <label style="flex:1 1 48%;">
+                <span class="text-14">Organization Name *</span><br />
+                <input type="text" name="organization" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;" />
+              </label>
+
+              <label style="flex:1 1 48%;">
+                <span class="text-14">City *</span><br />
+                <input type="text" name="city" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;" />
+              </label>
+
+              <label style="flex:1 1 48%;">
+                <span class="text-14">State *</span><br />
+                <input type="text" name="state" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;" />
+              </label>
+
+              <label style="flex:1 1 48%;">
+                <span class="text-14">Specify Services</span><br />
+                <input type="text" name="services" placeholder="e.g. Fundraising / IPO / Advisory" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;" />
+              </label>
+            </div>
+
+            <div class="mt-3" style="display:flex;gap:12px;align-items:center;">
+              <button type="submit" class="button button--primary button--slim" style="padding:10px 18px;">Submit Enquiry</button>
+              <div id="enquiryMsg" class="text text-14" aria-live="polite" style="color:green;"></div>
+            </div>
+          </form>
+
+          <script>
+            (function(){
+              const form = document.getElementById('enquiryForm');
+              const msg = document.getElementById('enquiryMsg');
+              form.addEventListener('submit', function(e){
+                e.preventDefault();
+                const fd = new FormData(form);
+                // basic front-end validation
+                if(!fd.get('name') || !fd.get('email') || !fd.get('organization') || !fd.get('city') || !fd.get('state')){
+                  msg.style.color = 'crimson';
+                  msg.textContent = 'Please fill all required fields.';
+                  return;
+                }
+                // TODO: replace with actual submission (AJAX/fetch or backend endpoint)
+                msg.style.color = 'green';
+                msg.textContent = 'Thank you — your enquiry has been received.';
+                form.reset();
+              });
+            })();
+          </script>
+        
+
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="content section-headings">
+          <h2 class="heading text-40 mb-3">Partner With Us</h2>
+          <p class="text text-18 mb-4">
+At BKD Advisors, in our endeavour to support startups and SMEs with the requisite resources essential for building, expanding, and growing their businesses we have partnered with a network of leading professionals & firms. This unique model ensures access to expertise, fosters focused accountability and enables grasping of wide knowledge. Our curated partners play a pivotal role in making us the most valuable service provider and we are eager to continue the impact by ever expanding our partnership network.           </p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel HTML - place where you want the carousel (e.g. before </main> / before footer) -->
+<section class="section-padding" aria-label="Clients carousel">
+  <div class="container">
+    <div id="clientCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500" data-bs-wrap="true" data-bs-pause="false">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row gx-3 justify-content-center align-items-center">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+              <img src="assets/img/clients/client1.png" class="img-fluid d-block mx-auto" alt="Client 1">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+              <img src="assets/img/clients/client2.png" class="img-fluid d-block mx-auto" alt="Client 2">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+              <img src="assets/img/clients/client3.png" class="img-fluid d-block mx-auto" alt="Client 3">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center d-none d-md-block">
+              <img src="assets/img/clients/client4.png" class="img-fluid d-block mx-auto" alt="Client 4">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center d-none d-lg-block">
+              <img src="assets/img/clients/client5.png" class="img-fluid d-block mx-auto" alt="Client 5">
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 (duplicate or additional logos) -->
+        <div class="carousel-item">
+          <div class="row gx-3 justify-content-center align-items-center">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+              <img src="assets/img/clients/client6.png" class="img-fluid d-block mx-auto" alt="Client 6">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+              <img src="assets/img/clients/client7.png" class="img-fluid d-block mx-auto" alt="Client 7">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+              <img src="assets/img/clients/client8.png" class="img-fluid d-block mx-auto" alt="Client 8">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center d-none d-md-block">
+              <img src="assets/img/clients/client9.png" class="img-fluid d-block mx-auto" alt="Client 9">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center d-none d-lg-block">
+              <img src="assets/img/clients/client10.png" class="img-fluid d-block mx-auto" alt="Client 10">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#clientCarousel" data-bs-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#clientCarousel" data-bs-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+
+      <!-- Optional indicators -->
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#clientCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#clientCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ...existing code... -->
     </main>       
     <footer>
       <!-- Footer Main -->
