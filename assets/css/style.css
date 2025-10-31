@@ -2482,9 +2482,14 @@ form textarea {
   overflow: hidden; }
 .hero-banner .text {margin-top:24px;}
 .hero-banner.with-floating-header {
-  --padding-block-start: calc(var(--header-height) + 60px + 60px);
-  --padding-block-bottom: calc(var(--header-height)); }
+padding-top: 160px;
+  
+}
 
+.carousel-item img {
+  border-radius:10px;
+  border:1px solid #e0e0e0;
+}
 .hero-banner .content > .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
