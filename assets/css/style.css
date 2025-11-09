@@ -2480,12 +2480,27 @@ form textarea {
   align-items: center;
   position: relative;
   overflow: hidden; }
-.hero-banner .text {margin-top:24px;}
+.hero-banner .text {margin-top:0px;}
+.header-logo img {
+  width: 60px;
+}
 .hero-banner.with-floating-header {
 padding-top: 160px;
   
 }
-
+.choose-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0; }
+.choose-list li {
+  position: relative;
+  margin-bottom:30px;
+}
+.choose-list li img {
+  width:72px;
+  height:auto;
+  margin-bottom: 10px;
+}
 .carousel-item img {
   border-radius:10px;
   border:1px solid #e0e0e0;
@@ -3984,7 +3999,7 @@ project-slider .swiper-slide {
 
 .choose-logo {
   -webkit-margin-before: 50px;
-  margin-block-start: 50px; }
+  margin-block-start: 50px; display: none; }
 
 .choose-rotating-logo {
   position: relative; }
@@ -5720,7 +5735,7 @@ footer {
   position: relative; }
 
 .footer-logo {
-  max-width: 188px;
+  max-width: 68px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

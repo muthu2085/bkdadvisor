@@ -169,6 +169,23 @@
           --swiper-navigation-size: 12px;
         }
       }
+      /* Breadcrumb for news cards */
+      .news-breadcrumb {
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--color-foreground-subheading, #5d666f);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .news-breadcrumb .crumb {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.85;
+      }
+      .news-breadcrumb .crumb:hover { opacity: 1; text-decoration: underline; }
+      .news-breadcrumb .sep { opacity: 0.5; }
     </style>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -181,8 +198,8 @@
           <div class="header-grid">
             <a class="header-logo" href="/" aria-label="Consulo">
               <img
-                src="assets/img/logo.png"
-                alt="Consulo Logo"
+                src="assets/img/logo.jpg"
+                alt="BKD Advisors Logo"
                 width="189"
                 height="32"
               />
@@ -192,8 +209,8 @@
                 <div class="d-lg-none header-nav-headings">
                   <a class="header-logo" href="/" aria-label="Consulo">
                     <img
-                      src="assets/img/logo.png"
-                      alt="Consulo Logo"
+                      src="assets/img/logo.jpg"
+                      alt="BKD Advisors Logo"
                       width="189"
                       height="32"
                       loading="lazy"
@@ -435,8 +452,8 @@
       <div class="drawer-headings">
         <a class="header-logo" href="/" aria-label="Consulo">
           <img
-            src="assets/img/logo.png"
-            alt="Consulo Logo"
+            src="assets/img/logo.jpg"
+            alt="BKD Advisors Logo"
             width="189"
             height="32"
             loading="lazy"
@@ -1262,19 +1279,17 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                   data-aos="fade-up"
                   data-aos-anchor=".footer-top"
                 >
-                  <a class="footer-logo" href="/" aria-label="Consulo Logo">
+                  <a class="footer-logo" href="/" aria-label="BKD Advisors Logo">
                     <img
-                      src="assets/img/logo-white.png"
-                      alt="Consulo Logo"
+                      src="assets/img/logo.jpg"
+                      alt="BKD Advisors Logo"
                       width="189"
                       height="32"
                       loading="lazy"
                     />
                   </a>
                   <p class="text text-16">
-                    Each demo built with Teba will look different. You can
-                    customize almost anything in the appearance of your website
-                    with only a few
+                   We bring the expertise and capital that fuel your growth. CollaboratIon with us accelerates your success and unlocks new opportunities. 
                   </p>
                   <ul
                     class="social-icons list-unstyled"
@@ -1284,7 +1299,7 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                     <li>
                       <a
                         class="social-link text"
-                        href="https://web.facebook.com"
+                        href="https://www.facebook.com/profile.php?id=61583078586113"
                       >
                         <svg
                           width="10"
@@ -1304,7 +1319,7 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                     <li>
                       <a
                         class="social-link text"
-                        href="https://www.linkedin.com/"
+                        href="https://www.linkedin.com/company/bkd-advisors/?viewAsMember=true"
                       >
                         <svg
                           width="17"
@@ -1324,7 +1339,7 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                     <li>
                       <a
                         class="social-link text"
-                        href="https://x.com/"
+                        href="https://x.com/BKDAdvisors"
                       >
                         <svg
                           width="18"
@@ -1371,23 +1386,23 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                   data-aos-anchor=".footer-top"
                 >
                   <div class="widget-heading heading text-22">Quick Link</div>
-                  <ul class="footer-menu list-unstyled">
+                 <ul class="footer-menu list-unstyled">
                     <li>
                       <a
-                        href="about.html"
+                        href="index.html"
                         class="text text-16 link"
                         aria-label="About Us"
                       >
-                        About Us
+                        Home
                       </a>
                     </li>
                     <li>
                       <a
-                        href="team.html"
+                        href="who-we-are.html"
                         class="text text-16 link"
                         aria-label="Our Team"
                       >
-                        Our Team
+                        Who We Are
                       </a>
                     </li>
                     <li>
@@ -1396,7 +1411,7 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                         class="text text-16 link"
                         aria-label="Pricing Plans"
                       >
-                        Pricing Plans
+                        What We Do
                       </a>
                     </li>
                     <li>
@@ -1417,7 +1432,6 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                         Contact Us
                       </a>
                     </li>
-                  </ul>
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -1430,46 +1444,46 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                   <ul class="footer-menu list-unstyled">
                     <li>
                       <a
-                        href="project.html"
+                        href="startup-funding.html"
                         class="text text-16 link"
-                        aria-label="UI/UX Design"
+                        aria-label="Starup Funding"
                       >
-                        UI/UX Design
+                        Startup Fundraising
                       </a>
                     </li>
                     <li>
                       <a
-                        href="team.html"
+                        href="sme-ipo-listing.html"
                         class="text text-16 link"
-                        aria-label="App Development"
+                        aria-label="Growth Advisory"
                       >
-                        App Development
+                        SME IPO Listing
                       </a>
                     </li>
                     <li>
                       <a
-                        href="services.html"
+                        href="sustainability-consulting.html"
                         class="text text-16 link"
-                        aria-label="Digital Marketing"
+                        aria-label="SME IPO Listing"
                       >
-                        Digital Marketing
+                        Sustainability Consulting
                       </a>
                     </li>
                     <li>
                       <a
-                        href="blog.html"
+                        href="growth-advisory.html"
                         class="text text-16 link"
-                        aria-label="Web Development"
-                        >Web Development</a
+                        aria-label="Sustainability Consulting"
+                        >Growth Advisory</a
                       >
                     </li>
                     <li>
                       <a
-                        href="contact.html"
+                        href="training-workshops.html"
                         class="text text-16 link"
-                        aria-label="Cyber Security"
+                        aria-label="Training & Workshops"
                       >
-                        Cyber Security
+                        Training &amp; Workshops
                       </a>
                     </li>
                   </ul>
@@ -1485,38 +1499,29 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
                   <ul class="footer-menu list-unstyled">
                     <li>
                       <a
-                        href="about.html"
+                        href=""
                         class="text text-16 link"
                         aria-label="Working Process"
                       >
-                        Working Process
+                       Phone: 9943766959
                       </a>
                     </li>
                     <li>
                       <a
-                        href="privacy-policy.html"
+                        href=""
                         class="text text-16 link"
                         aria-label="Privacy Policy"
                       >
-                        Privacy Policy
+                       Email: info@bkdadvisors.in
                       </a>
                     </li>
                     <li>
                       <a
-                        href="terms-condition.html"
+                        href=""
                         class="text text-16 link"
                         aria-label="Terms & Conditions"
                       >
-                        Terms & Conditions
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="faq.html"
-                        class="text text-16 link"
-                        aria-label="FAQ"
-                      >
-                        Faqs
+                        Chat With Us
                       </a>
                     </li>
                   </ul>
@@ -1530,7 +1535,7 @@ At BKD Advisors, in our endeavour to support startups and SMEs with the requisit
             <div class="row footer-bottom-row">
               <div class="col-12 col-md-6 col-lg-6">
                 <div class="footer-copyright text text-16">
-                  Copyright ©<span class="current-year"></span> SpreeThemes.
+                  Copyright ©<span class="current-year"></span>BKD Advisors.
                   All rights reserved.
                 </div>
               </div>
