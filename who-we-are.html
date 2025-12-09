@@ -25,7 +25,7 @@
       name="description"
       content="BKD Advisor is a leading finance consulting company offering expert financial advisory, investment planning, tax consulting, wealth management, and business strategy services. Trusted by businesses and individuals for professional financial solutions."
     />
-
+<link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -733,7 +733,7 @@
         <div class="<div class="card">
           <div class="card-body">
             <blockquote class="blockquote mb-0">
-              <p>We’re partners more than just advisors. As a trusted partner in the entrepreneurial journey, we help you navigate complex business landscapes with clarity and confidence. </p>
+              <p class="text-black">We’re partners more than just advisors. As a trusted partner in the entrepreneurial journey, we help you navigate complex business landscapes with clarity and confidence. </p>
               <footer class="blockquote-footer">
                 
                 <cite title="Source title">BKD Advisors</cite>
@@ -741,23 +741,119 @@
             </blockquote>
           </div>
         </div>
-        <div class="row mt-5">
-          <div class="col-lg-6 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="50">
-            <div class="feature-box">
-              
-              <h3 class="feature-title">Our Mission</h3>
-              <p class="feature-text">Build an innovative and sustainable entrepreneurial ecosystem by developing local expertise, sharing knowledge, and fostering inclusivity, grounded in the belief that every business creates equal value and contributes meaningfully to the economy.</p>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-12 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="feature-box">
-              
-              <h3 class="feature-title">Our Vision</h3>
-              <p class="feature-text">Be the most trusted partner in entrepreneurial consulting and services, ensuring every entrepreneur has access to affordable and empowering business solutions.</p>
-            </div>
-          </div>
-         
+        <div>
+  <div class="row g-5 justify-content-center py-5">
+
+    <!-- Our Mission Card -->
+    <div class="col-lg-5 col-md-10">
+      <div class="mv-card h-100" data-aos="fade-up" data-aos-delay="100">
+        <div class="mv-icon">
+          <i class="lni lni-shield-dollar"></i>
+        </div>
+        <h3 class="mv-title">Our Mission</h3>
+        <p class="mv-text">
+          Build an innovative and sustainable entrepreneurial ecosystem by developing local expertise, 
+          sharing knowledge, and fostering inclusivity — grounded in the belief that 
+          <strong>every business creates equal value</strong> and contributes meaningfully to the economy.
+        </p>
       </div>
+    </div>
+
+    <!-- Our Vision Card -->
+    <div class="col-lg-5 col-md-10">
+      <div class="mv-card h-100" data-aos="fade-up" data-aos-delay="200">
+        <div class="mv-icon">
+          <i class="lni lni-eye"></i>
+        </div>
+        <h3 class="mv-title">Our Vision</h3>
+        <p class="mv-text">
+          Be the <strong>most trusted partner</strong> in entrepreneurial consulting and services, 
+          ensuring every entrepreneur — big or small — has access to 
+          <strong>affordable, empowering, and world-class business solutions</strong>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Required CSS (add this in <head> or your CSS file) -->
+<style>
+  .mv-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+ 0;
+  }
+
+  .mv-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: #818cf8;
+  }
+
+  .mv-icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+  }
+
+  .mv-icon i {
+    font-size: 2.5rem;
+    color: white;
+  }
+
+  .mv-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .mv-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #6366f1;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom:20px;
+    display: none;
+  }
+
+  .mv-text {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .mv-card {
+      padding: 40px 25px;
+    }
+    .mv-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
         </div>
          <div class="cta-box" data-aos="fade-up" data-aos-delay="100">
             <div class="cta-content">
