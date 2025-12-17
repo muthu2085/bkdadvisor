@@ -1207,7 +1207,9 @@ drawer-opener * {
   background-color: var(--color-background);
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  color:#fff;
+ }
 
 .accordion-content {
   max-height: 0;
