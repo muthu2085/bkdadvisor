@@ -25,7 +25,7 @@
       name="description"
       content="BKD Advisor is a leading finance consulting company offering expert financial advisory, investment planning, tax consulting, wealth management, and business strategy services. Trusted by businesses and individuals for professional financial solutions."
     />
-
+<link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -169,30 +169,29 @@
           --swiper-navigation-size: 12px;
         }
       }
-      /* ...existing code... */
-.icon-box {
-  display: flex;
-  align-items: flex-start;
-  text-align: left;
-
-  gap: 20px;
-}
-
-.icon-box .icon-wrapper {
-  flex-shrink: 0;
-}
-
-.icon-box .icon-title,
-.icon-box .icon-text {
-  margin-bottom: 0;
-}
-/* ...existing code... */
+      /* Breadcrumb for news cards */
+      .news-breadcrumb {
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--color-foreground-subheading, #5d666f);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .news-breadcrumb .crumb {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.85;
+      }
+      .news-breadcrumb .crumb:hover { opacity: 1; text-decoration: underline; }
+      .news-breadcrumb .sep { opacity: 0.5; }
     </style>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-     <!-- Header 2 -->
+    <!-- Header 2 -->
     <sticky-header data-sticky-type="always">
       <header class="header-2 header-floating">
         <div class="container-fluid">
@@ -200,7 +199,7 @@
             <a class="header-logo" href="/" aria-label="Consulo">
               <img
                 src="assets/img/logo.jpg"
-                alt="BKD Advisors logo"
+                alt="BKD Advisors Logo"
                 width="189"
                 height="32"
               />
@@ -211,7 +210,7 @@
                   <a class="header-logo" href="/" aria-label="Consulo">
                     <img
                       src="assets/img/logo.jpg"
-                      alt="BKD Advisors logo"
+                      alt="BKD Advisors Logo"
                       width="189"
                       height="32"
                       loading="lazy"
@@ -583,7 +582,8 @@
     </div>
  <!-- Main -->
     <main>
-      <!-- Hero Banner -->
+
+    <!-- Hero Banner -->
       <div class="hero-banner with-floating-header">
         <div class="media media-bg">
           <img
@@ -599,14 +599,14 @@
             <div class="col-8 mx-auto">
               <div class="hero-content text-center pt-5">
                 <h1 class="hero-title">
-                  SME IPO Listing   
+                  Contact Us       
                 </h1>
                 <p class="hero-text my-4">
-                  We are a team of passionate professionals dedicated to empowering SMEs to achieve their full potential through innovative funding solutions.  Our expert team offer various deliver tailored financial solutions that drive your success that include, IPO listing, valuation, and restructuring advisory. 
+                    Get in touch with our team of experts. We're here to help you navigate your financial journey and achieve your business goals.
                 </p>
                 <div class="hero-buttons">
                   <a
-                    href="services.html"
+                    href="contact.html"
                     class="button button--primary"
                     aria-label="hero button"
                   >
@@ -634,125 +634,35 @@
         </div>
       </div>
 
-        <!-- ...existing code... -->
-<section class="section-padding" id="partner-with-us">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-12">
-        <div class="media-wrap">
-          <img
-            src="assets/img/ipo-consult.jpg"
-            alt="sme ipo listing"
-            width="600"
-            height="400"
-            loading="lazy"
-            style="border-radius: 16px;"
-          />
-        </div>
-      </div>
-      <div class="col-lg-6 col-12 ps-lg-5">
-        <div class="content section-headings">
-          <h2 class="heading text-40 mb-3">SME IPO Advisory Services</h2>
-          <p class="text text-18 mb-4">
- We specialize in facilitating strategic fundraising through SME IPO listings that enables businesses to attain their growth ambitions. SMEs are further provided with that vital access to pre-IPO funding customised to their needs before going public. A SME IPO offers numerous benefits like expanding operations, preparing for next-level of scaling, leading to increased market credibility, enhanced brand recognition, and driving the growth. With the requisite financial resources and strategic support system we turn their vision into reality.        </div>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-<!-- ...existing code... -->
-<section class="pb-5" id="fundraising-support">
-  <div class="container">
-    <h3 class="heading text-32 mb-5 text-center">Our Fundraising Support Includes</h3>
-    <div class="container">
-    <div class="row g-3 mt-4">
-
-        <!-- 1 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-check-square"></i>
-                <h5>IPO Readiness & Eligibility Assessment</h5>
-                <p>Comprehensive assessment of the SME to determine eligibility and preparedness for IPO listing.</p>
+      <section class="contact-section">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <h2 class="heading">Contact Information</h2>
+              <p class="text my-4">Reach out to our team for inquiries about startup funding, SME IPO, sustainability consulting, and growth advisory.</p>
+              <ul class="contact-list">
+                <li><strong>Address:</strong> Peel House, 30 The Downs</li>
+                <li><strong>Phone:</strong> <a href="tel:+01234567890">+01 234 567 890</a></li>
+                <li><strong>Email:</strong> <a href="mailto:consulo@email.com">consulo@email.com</a></li>
+              </ul>
+              <div class="map-placeholder" aria-hidden="true">Map or image placeholder</div>
             </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-users"></i>
-                <h5>Appointment of Intermediaries</h5>
-                <p>Appointment of Merchant Banker (Lead Manager), Registrar, Legal Counsel, Auditors and other key intermediaries.</p>
+            <div class="contact-form">
+              <h2 class="heading mb-4">Send Us A Message</h2>
+              <form action="#" method="post" class="form-contact">
+                <div class="form-row">
+                  <input type="text" name="name" placeholder="Your name" required />
+                  <input type="email" name="email" placeholder="Email address" required />
+                </div>
+                <input type="text" name="subject" placeholder="Subject" />
+                <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+                <button type="submit"  class="button button--primary"               aria-label="hero button">Send Message</button>
+              </form>
             </div>
+          </div>
         </div>
+      </section>
 
-        <!-- 3 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-search-dollar"></i>
-                <h5>Exhaustive Due Diligence</h5>
-                <p>In-depth financial, legal, and business due-diligence to ensure full regulatory compliance and clean records.</p>
-            </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-file-alt"></i>
-                <h5>DRHP Preparation & Filing</h5>
-                <p>Preparation and filing of Draft Red Herring Prospectus (DRHP) and all requisite SEBI & stock exchange documents.</p>
-            </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-comments"></i>
-                <h5>SEBI & Exchange Query Resolution</h5>
-                <p>Efficient handling of stock exchange and SEBI queries and securing in-principle and final approvals.</p>
-            </div>
-        </div>
-
-        <!-- 6 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-file-contract"></i>
-                <h5>RHP Filing & Roadshows</h5>
-                <p>Preparation and filing of Red Herring Prospectus (RHP) along with investor roadshows (physical & virtual).</p>
-            </div>
-        </div>
-
-        <!-- 7 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-user-friends"></i>
-                <h5>Investor Engagement</h5>
-                <p>Engaging QIBs, HNIs, retail and anchor investors through targeted meetings and marketing campaigns.</p>
-            </div>
-        </div>
-
-        <!-- 8 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-rocket"></i>
-                <h5>Seamless Issue Opening & Listing</h5>
-                <p>Ensuring smooth subscription process, basis of allotment, and successful listing on BSE SME / NSE Emerge.</p>
-            </div>
-        </div>
-
-        <!-- 9 (centered) -->
-        <div class="col-lg-4 col-md-6 mx-auto">
-            <div class="icon-card h-100">
-                <i class="la la-shield-alt"></i>
-                <h5>Post-IPO Compliance & Support</h5>
-                <p>Long-term partnership for post-listing compliance, investor relations, corporate governance and sustained growth.</p>
-            </div>
-        </div>
-
-    </div>
-</div>
-  </div>
-</section>
 <!-- ...existing code... -->
     </main>       
     <footer>
@@ -935,46 +845,46 @@
                   <ul class="footer-menu list-unstyled">
                     <li>
                       <a
-                        href="project.html"
+                        href="startup-funding.html"
                         class="text text-16 link"
                         aria-label="Starup Funding"
                       >
-                        Starup Funding
+                        Startup Fundraising
                       </a>
                     </li>
                     <li>
                       <a
-                        href="team.html"
+                        href="sme-ipo-listing.html"
                         class="text text-16 link"
                         aria-label="Growth Advisory"
-                      >
-                        Growth Advisory
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="services.html"
-                        class="text text-16 link"
-                        aria-label="SME IPO Listing"
                       >
                         SME IPO Listing
                       </a>
                     </li>
                     <li>
                       <a
-                        href="blog.html"
+                        href="sustainability-investment.html"
+                        class="text text-16 link"
+                        aria-label="SME IPO Listing"
+                      >
+                        Sustainability Consulting
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="growth-advisory.html"
                         class="text text-16 link"
                         aria-label="Sustainability Consulting"
-                        >Sustainability Consulting</a
+                        >Growth Advisory</a
                       >
                     </li>
                     <li>
                       <a
-                        href="contact.html"
+                        href="training-workshops.html"
                         class="text text-16 link"
                         aria-label="Training & Workshops"
                       >
-                        Training & Workshops
+                        Training &amp; Workshops
                       </a>
                     </li>
                   </ul>
@@ -988,15 +898,6 @@
                 >
                   <div class="widget-heading heading text-22">Information</div>
                   <ul class="footer-menu list-unstyled">
-                    <li>
-                      <a
-                        href="about.html"
-                        class="text text-16 link"
-                        aria-label="Working Process"
-                      >
-                        Working Process
-                      </a>
-                    </li>
                     <li>
                       <a
                         href=""

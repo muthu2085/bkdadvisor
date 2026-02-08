@@ -25,7 +25,7 @@
       name="description"
       content="BKD Advisor is a leading finance consulting company offering expert financial advisory, investment planning, tax consulting, wealth management, and business strategy services. Trusted by businesses and individuals for professional financial solutions."
     />
-
+<link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -169,38 +169,34 @@
           --swiper-navigation-size: 12px;
         }
       }
-      /* ...existing code... */
-.icon-box {
-  display: flex;
-  align-items: flex-start;
-  text-align: left;
-
-  gap: 20px;
-}
-
-.icon-box .icon-wrapper {
-  flex-shrink: 0;
-}
-
-.icon-box .icon-title,
-.icon-box .icon-text {
-  margin-bottom: 0;
-}
-/* ...existing code... */
+      /* Breadcrumb for news cards */
+      .news-breadcrumb {
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--color-foreground-subheading, #5d666f);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .news-breadcrumb .crumb {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.85;
+      }
+      .news-breadcrumb .crumb:hover { opacity: 1; text-decoration: underline; }
+      .news-breadcrumb .sep { opacity: 0.5; }
     </style>
     <link rel="stylesheet" href="assets/css/style.css" />
-      <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  
   </head>
 
   <body>
- <!-- Header 2 -->
+    <!-- Header 2 -->
     <sticky-header data-sticky-type="always">
       <header class="header-2 header-floating">
         <div class="container-fluid">
           <div class="header-grid">
-            <a class="header-logo" href="/" aria-label="BKD Advisors">
+            <a class="header-logo" href="/" aria-label="Consulo">
               <img
                 src="assets/img/logo.jpg"
                 alt="BKD Advisors Logo"
@@ -211,7 +207,7 @@
             <drawer-menu>
               <nav class="header-nav drawer-menu">
                 <div class="d-lg-none header-nav-headings">
-                  <a class="header-logo" href="/" aria-label="BKD Advisors">
+                  <a class="header-logo" href="/" aria-label="Consulo">
                     <img
                       src="assets/img/logo.jpg"
                       alt="BKD Advisors Logo"
@@ -244,13 +240,19 @@
                     </svg>
                   </drawer-opener>
                 </div>
-                <ul class="header-menu list-unstyled">
+                 <ul class="header-menu list-unstyled">
                   <li class="nav-item">
                     <a class="menu-link menu-link-main menu-accrodion" href="index.html">Home</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="menu-link menu-link-main menu-accrodion" href="#">Who we are</a>
-                   
+                    <a class="menu-link menu-link-main" href="who-we-are.html">Who we are</a>
+                    <!--<div class="menu-absolute header-submenu submenu-color">
+                       <ul class="list-unstyled">
+                      <li><a class="menu-link" href="about.html">About us</a></li>
+                      <li><a class="menu-link" href="founder.html">Meet the founder</a></li>
+                      <li><a class="menu-link" href="advisory-committee.html">Advisory Committee</a></li>
+                    </ul>
+                    </div>-->
                   </li>
                   <li class="nav-item dropdown">
                     <a class="menu-link menu-link-main menu-accrodion" href="#">What we do</a>
@@ -258,20 +260,21 @@
                        <ul class="list-unstyled">
                       <li class="nav-item"><a class="menu-link" href="startup-funding.html">Startup Funding</a></li>
                       <li class="nav-item"><a class="menu-link" href="sme-ipo-listing.html">SME IPO</a></li>
-                      <li class="nav-item"><a class="menu-link" href="sustainability-consulting.html">Sustainability Consulting</a></li>
-                      <li class="nav-item"><a class="menu-link" href="growth-advisory.html">Growth Advisory</a></li>
-                      <li class="nav-item"><a class="menu-link" href="training-workshops.html">SME IPO</a></li>
-                      
+                      <li class="nav-item"><a class="menu-link" href="sustainability-investment.html">Sustainability Investment</a></li>
+                      <li class="nav-item"><a class="menu-link" href="business-lending.html">Business Lending</a></li>
+                      <li class="nav-item"><a class="menu-link" href="ceo-academy.html">CEO Academy</a></li>
                     </ul>
                     </div>
                    
                   </li>
                   <li class="nav-item dropdown">
                     <a class="menu-link menu-link-main menu-accrodion" href="#">What we think</a>
-                    <ul class="dropdown-menu">
-                      <li><a class="menu-link" href="blogs.html">Blogs</a></li>
-                      <li><a class="menu-link" href="newsletter.html">Newsletter</a></li>
-                    </ul>
+                    <div class="menu-absolute header-submenu submenu-color">
+                   
+                    <ul class="list-unstyled">
+                      <li><a class="menu-link" href="gallery.html">Gallery</a></li>
+                     <li><a class="menu-link" href="https://medium.com/@dharambaskar" target="_blank">Blog</a></li></ul>
+                  </div>
                   </li>
                 </ul>
 
@@ -283,12 +286,12 @@
                     >
                       <li class="nav-item">
                         <a class="menu-link" href="services.html"
-                          >Launch with BKD Advisors</a
+                          >Launch with Consulo</a
                         >
                       </li>
                       <li class="nav-item">
                         <a class="menu-link" href="project.html"
-                          >Migrate to BKD Advisors</a
+                          >Migrate to Consulo</a
                         >
                       </li>
                       <li class="nav-item">
@@ -352,7 +355,7 @@
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="menu-link" href="mailto:BKD Advisors@email.com">
+                        <a class="menu-link" href="mailto:consulo@email.com">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -367,7 +370,7 @@
                               d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
                             />
                           </svg>
-                          BKD Advisors@email.com
+                          consulo@email.com
                         </a>
                       </li>
                     </ul>
@@ -454,7 +457,7 @@
 
     <div class="theme-drawer drawer-additional" data-position="right">
       <div class="drawer-headings">
-        <a class="header-logo" href="/" aria-label="BKD Advisors">
+        <a class="header-logo" href="/" aria-label="Consulo">
           <img
             src="assets/img/logo.jpg"
             alt="BKD Advisors Logo"
@@ -494,10 +497,10 @@
             class="drawer-additional-menu list-unstyled flex-direction-column"
           >
             <li class="nav-item">
-              <a class="menu-link" href="services.html">Launch with BKD Advisors</a>
+              <a class="menu-link" href="services.html">Launch with Consulo</a>
             </li>
             <li class="nav-item">
-              <a class="menu-link" href="project.html">Migrate to BKD Advisors</a>
+              <a class="menu-link" href="project.html">Migrate to Consulo</a>
             </li>
             <li class="nav-item">
               <a class="menu-link" href="contact.html">Partner Services</a>
@@ -556,7 +559,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="menu-link" href="mailto:BKD Advisors@email.com">
+              <a class="menu-link" href="mailto:consulo@email.com">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -570,7 +573,7 @@
                     d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
                   />
                 </svg>
-                BKD Advisors@email.com
+                consulo@email.com
               </a>
             </li>
           </ul>
@@ -579,7 +582,8 @@
     </div>
  <!-- Main -->
     <main>
-      <!-- Hero Banner -->
+
+    <!-- Hero Banner -->
       <div class="hero-banner with-floating-header">
         <div class="media media-bg">
           <img
@@ -595,12 +599,14 @@
             <div class="col-8 mx-auto">
               <div class="hero-content text-center pt-5">
                 <h1 class="hero-title">
-                  Sustainability Consulting   
+                  Gallery       
                 </h1>
                 <p class="hero-text my-4">
-We offer a comprehensive range of sustainability consulting & services tailored to your organization’s unique needs. Whether you’re beginning your sustainability journey or enhancing an existing strategy, our experts provide end-to-end service that meets your goals.                <div class="hero-buttons">
+                    Get in touch with our team of experts. We're here to help you navigate your financial journey and achieve your business goals.
+                </p>
+                <div class="hero-buttons">
                   <a
-                    href="services.html"
+                    href="contact.html"
                     class="button button--primary"
                     aria-label="hero button"
                   >
@@ -628,114 +634,91 @@ We offer a comprehensive range of sustainability consulting & services tailored 
         </div>
       </div>
 
-
-
-<section class="section-wrapper">
-<div class="container">
-<div class="row align-items-center g-5">
-
-
-<div class="col-lg-6 col-12">
-<div class="media-wrap">
-<img src="assets/img/sustainable-consulting.jpg" alt="Partner with Us" width="600" height="400" loading="lazy" />
-</div>
-</div>
-
-
-<div class="col-lg-6 col-12">
-<div class="content section-headings">
-<h2 class="heading text-40 mb-3">Sustainability Services</h2>
-
-
-<p class="text mb-3">
-We provide a comprehensive suite of sustainability services that directly address your organization’s needs. Whether your company is taking its first steps toward sustainable practices or looking to advance an established ESG strategy, our solutions are crafted to support every stage of your sustainability journey.
-</p>
-
-
-<p class="text mb-4">
-From compliance support and responsible sourcing to carbon neutrality and long-term sustainability planning, we help you build measurable, future-ready impact.
-</p>
-
-
-<div class="highlight-box">
-<strong>Our approach:</strong> Practical, data-backed and customer-first — designed to drive environmental responsibility and business growth.
-</div>
-</div>
-</div>
-
-
-</div>
-</div>
-</section>
+      
 
 <!-- ...existing code... -->
-<section class="pb-5" id="fundraising-support">
-  <div>
-    <h3 class="heading text-32 mb-5 text-center">Our Comprehensive Sustainability Services
-</h3>
-<div class="container">
-    <div class="row g-5">
-
-        <!-- 1 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-file-alt"></i>
-                <h5>BRSR Reporting (SEBI Mandated)</h5>
-                <p>Preparing comprehensive Business Responsibility and Sustainability Reporting (BRSR) for listed companies as per latest SEBI guidelines.</p>
+      <!-- Gallery Section -->
+      <section class="section-padding" aria-label="Project gallery">
+        <div class="container">
+          <div class="section-headings text-center">
+            <div class="subheading text-20 subheading-bg" data-aos="fade-up">
+              <span>Gallery</span>
             </div>
+            <h2 class="heading text-40" data-aos="fade-up">Our Work & Events</h2>
+          </div>
+
+          <style>
+            .masonry { column-count: 3; column-gap: 1rem; }
+            .masonry-item { break-inside: avoid; margin-bottom: 1rem; display: inline-block; width:100%; }
+            .gallery-item img { width:100%; display:block; border-radius:12px; transition: transform .22s ease; }
+            .gallery-item a:hover img{ transform: scale(1.02); }
+            @media (max-width: 992px){ .masonry{ column-count:2 } }
+            @media (max-width: 600px){ .masonry{ column-count:1 } }
+
+            /* Lightbox specific styles */
+            #galleryLightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:1200}
+            #galleryLightbox.open{display:flex}
+            #galleryLightbox .modal-card{background:transparent;border-radius:10px;max-width:1100px;width:94%;padding:18px}
+            #galleryLightbox .tm-close{position:absolute;top:12px;right:12px;background:transparent;border:0;color:#fff;font-size:28px;cursor:pointer}
+          </style>
+
+          <div class="masonry mt-4" data-aos="fade-up">
+            <div class="masonry-item">
+              <div class="gallery-item">
+                <a href="#" data-img="assets/img/gallery/gallery1.jpeg" aria-label="Open image">
+                  <img src="assets/img/gallery/gallery1.jpeg" alt="Gallery image 1" loading="lazy">
+                </a>
+              </div>
+            </div>
+            <div class="masonry-item">
+              <div class="gallery-item">
+                <a href="#" data-img="assets/img/gallery/gallery2.jpeg" aria-label="Open image">
+                  <img src="assets/img/gallery/gallery2.jpeg" alt="Gallery image 2" loading="lazy">
+                </a>
+              </div>
+            </div>
+            <div class="masonry-item">
+              <div class="gallery-item">
+                <a href="#" data-img="assets/img/gallery/gallery3.jpeg" aria-label="Open image">
+                  <img src="assets/img/gallery/gallery3.jpeg" alt="Gallery image 3" loading="lazy">
+                </a>
+              </div>
+            </div>
+            <div class="masonry-item">
+              <div class="gallery-item">
+                <a href="#" data-img="assets/img/gallery/gallery4.jpeg" aria-label="Open image">
+                  <img src="assets/img/gallery/gallery4.jpeg" alt="Gallery image 4" loading="lazy">
+                </a>
+              </div>
+            </div>
+            <div class="masonry-item">
+              <div class="gallery-item">
+                <a href="#" data-img="assets/img/gallery/gallery5.jpeg" aria-label="Open image">
+                  <img src="assets/img/gallery/gallery5.jpeg" alt="Gallery image 5" loading="lazy">
+                </a>
+              </div>
+            </div>
+            <div class="masonry-item">
+              <div class="gallery-item">
+                <a href="#" data-img="assets/img/gallery/gallery6.jpeg" aria-label="Open image">
+                  <img src="assets/img/gallery/gallery6.jpeg" alt="Gallery image 6" loading="lazy">
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- 2 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-globe"></i>
-                <h5>UN SDG Alignment & Materiality Assessment</h5>
-                <p>Advising on UN Sustainable Development Goals alignment, ESG frameworks, and materiality assessments to identify key environmental & social issues.</p>
+        <!-- Lightbox modal -->
+        <div id="galleryLightbox" class="team-modal" role="dialog" aria-hidden="true" style="display:none;">
+          <div class="modal-card" style="max-width:1000px;">
+            <button class="tm-close" aria-label="Close" style="position:absolute;top:12px;right:12px;background:transparent;border:0;font-size:28px;color:#fff;">×</button>
+            <div style="background:#000;padding:20px;display:flex;align-items:center;justify-content:center;">
+              <img id="lightboxImg" src="" alt="" style="max-width:100%;max-height:80vh;border-radius:8px;display:block;" />
             </div>
+          </div>
         </div>
+      </section>
 
-        <!-- 3 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-leaf"></i>
-                <h5>Sustainability Audits & GHG Accounting</h5>
-                <p>Conducting GHG monitoring, carbon footprint assessments, CBAM compliance, decarbonization roadmaps, and carbon neutrality planning.</p>
-            </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-certificate"></i>
-                <h5>Environmental Licenses & Permits</h5>
-                <p>End-to-end support in obtaining environmental clearances, pollution control board consents, and regulatory permits.</p>
-            </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="icon-card h-100">
-                <i class="la la-chalkboard-teacher"></i>
-                <h5>ESG Training & Workshops</h5>
-                <p>Delivering customized sustainability-focused learning programs, board training, and employee awareness workshops.</p>
-            </div>
-        </div>
-
-        <!-- 6 (centered on larger screens) -->
-        <div class="col-lg-4 col-md-6 mx-auto">
-            <div class="icon-card h-100">
-                <i class="la la-handshake"></i>
-                <h5>Industry Collaboration & Strategy</h5>
-                <p>Partnering with industry bodies, think tanks, and institutions to co-develop long-term sustainability strategies and thought leadership.</p>
-            </div>
-        </div>
-
-    </div>
-</div>
-  </div>
-  
-</section>
-<!-- ...existing code... -->
     </main>       
     <footer>
       <!-- Footer Main -->
@@ -917,46 +900,46 @@ From compliance support and responsible sourcing to carbon neutrality and long-t
                   <ul class="footer-menu list-unstyled">
                     <li>
                       <a
-                        href="project.html"
+                        href="startup-funding.html"
                         class="text text-16 link"
                         aria-label="Starup Funding"
                       >
-                        Starup Funding
+                        Startup Fundraising
                       </a>
                     </li>
                     <li>
                       <a
-                        href="team.html"
+                        href="sme-ipo-listing.html"
                         class="text text-16 link"
                         aria-label="Growth Advisory"
-                      >
-                        Growth Advisory
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="services.html"
-                        class="text text-16 link"
-                        aria-label="SME IPO Listing"
                       >
                         SME IPO Listing
                       </a>
                     </li>
                     <li>
                       <a
-                        href="blog.html"
+                        href="sustainability-investment.html"
+                        class="text text-16 link"
+                        aria-label="SME IPO Listing"
+                      >
+                        Sustainability Consulting
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="growth-advisory.html"
                         class="text text-16 link"
                         aria-label="Sustainability Consulting"
-                        >Sustainability Consulting</a
+                        >Growth Advisory</a
                       >
                     </li>
                     <li>
                       <a
-                        href="contact.html"
+                        href="training-workshops.html"
                         class="text text-16 link"
                         aria-label="Training & Workshops"
                       >
-                        Training & Workshops
+                        Training &amp; Workshops
                       </a>
                     </li>
                   </ul>
@@ -970,15 +953,6 @@ From compliance support and responsible sourcing to carbon neutrality and long-t
                 >
                   <div class="widget-heading heading text-22">Information</div>
                   <ul class="footer-menu list-unstyled">
-                    <li>
-                      <a
-                        href="about.html"
-                        class="text text-16 link"
-                        aria-label="Working Process"
-                      >
-                        Working Process
-                      </a>
-                    </li>
                     <li>
                       <a
                         href=""
@@ -1070,6 +1044,35 @@ From compliance support and responsible sourcing to carbon neutrality and long-t
     </scroll-top>
 
     <!-- all js -->
+    <script>
+      (function(){
+        const lightbox = document.getElementById('galleryLightbox');
+        const img = document.getElementById('lightboxImg');
+        if(!lightbox || !img) return;
+        const closeBtn = lightbox.querySelector('.tm-close');
+
+        document.querySelectorAll('.gallery-item a').forEach(a=>{
+          a.addEventListener('click', function(e){
+            e.preventDefault();
+            const src = this.getAttribute('data-img') || this.querySelector('img')?.src;
+            if(!src) return;
+            img.src = src;
+            lightbox.style.display = 'flex';
+            requestAnimationFrame(()=> lightbox.classList.add('open'));
+            lightbox.setAttribute('aria-hidden','false');
+          });
+        });
+
+        function close(){
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden','true');
+          setTimeout(()=>{ lightbox.style.display='none'; img.src=''; },240);
+        }
+        closeBtn?.addEventListener('click', close);
+        lightbox.addEventListener('click', function(e){ if(e.target===lightbox) close(); });
+        document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+      })();
+    </script>
     <script src="assets/js/vendor.js" defer></script>
     <script src="assets/js/main.js" defer></script>
     </body>

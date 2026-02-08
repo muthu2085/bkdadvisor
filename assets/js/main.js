@@ -721,3 +721,21 @@ class ProgressBar extends HTMLElement {
 }
 
 customElements.define("progress-bar", ProgressBar);
+
+// Initialize Client Carousel Swiper
+const clientSwiper = new Swiper(".clientSwiper", {
+  loop: true,
+  speed: 1500,
+  autoplay: {
+    delay: 8000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

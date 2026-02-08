@@ -5967,7 +5967,10 @@ footer .social-link:hover {
     width: 100%;
     max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
-    max-width: fit-content; } }
+    max-width: fit-content; }
+ 
+  
+  }
 
 @media (min-width: 1601px) {
   .footer-custom-row {
@@ -6040,3 +6043,94 @@ footer .social-link:hover {
       .floating-badge.badge-top-left { top: 6px; left: 8px; transform:none; }
       .floating-badge.badge-bottom-right { bottom: 6px; right: 8px; transform:none; }
     }
+
+/* Client Swiper Navigation Arrows */
+.clientSwiper .swiper-button-prev:after,
+.clientSwiper .swiper-button-next:after {
+  content: '';
+  display: block;
+}
+
+.clientSwiper .swiper-button-prev::before,
+.clientSwiper .swiper-button-next::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--color-foreground);
+  border-right: 2px solid var(--color-foreground);
+}
+
+.clientSwiper .swiper-button-prev::before {
+  transform: rotate(-135deg);
+}
+
+.clientSwiper .swiper-button-next::before {
+  transform: rotate(45deg);
+}
+
+.clientSwiper .swiper-button-prev:hover::before,
+.clientSwiper .swiper-button-next:hover::before {
+  border-top-color: white;
+  border-right-color: white;
+}
+/* Fundraising section spacing adjustments */
+#fundraising-support .heading { margin-bottom: 1rem !important; }
+#fundraising-support .icon-box { gap: 12px; padding: 6px 0; }
+#fundraising-support .icon-content .icon-text { margin: 0; }
+#fundraising-support .mb-4 { margin-bottom: 0.75rem !important; }
+
+   .footer-custom-row p, .footer-main {
+      color:#fff!important
+    }
+
+/* Service card styles */
+.service-card {
+  border: 1px solid rgba(28,37,57,0.06);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(28,37,57,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  background: #ffffff;
+}
+.service-card h5 { font-size: 18px; margin-bottom: 8px; color: var(--color-foreground); }
+.service-card p { color: var(--color-foreground-subheading); margin: 0; }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(28,37,57,0.08); }
+
+@media (max-width: 767px) {
+  .service-card { padding: 16px; }
+}
+
+/* Contact section two-column grid */
+.contact-section { padding: 48px 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.contact-info, .contact-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 6px 18px rgba(28,37,57,0.06);
+  border: 1px solid rgba(28,37,57,0.04);
+}
+.contact-info .contact-list { list-style: none; padding: 0; margin: 16px 0 0 0; color: var(--color-foreground-subheading); }
+.contact-info .contact-list li { margin-bottom: 10px; }
+.map-placeholder { margin-top: 18px; background: #f5f7fa; color: #7b8791; padding: 18px; border-radius: 8px; text-align: center; }
+.form-contact input[type="text"], .form-contact input[type="email"], .form-contact textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: var(--style-border-width-inputs) solid var(--color-input-border);
+  border-radius: var(--style-border-radius-inputs);
+  background: var(--color-input-background);
+}
+.form-row { display: flex; gap: 12px; }
+.form-row input { flex: 1; }
+.form-contact .button { display: inline-block; width:220px; margin-top: 8px; }
+
+@media (max-width: 767px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { flex-direction: column; }
+}
