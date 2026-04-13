@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Growth Webinar | Baskar Perumal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --cream: #f5f0e8;
+    --gold: #0d6efd;
+    --gold-light: #6ea8fe;
+    --rust: #0a58ca;
+    --sage: #031633;
+    --mid: #6b6560;
+    --border: rgba(13,110,253,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    overflow: hidden;
+    padding: 0 clamp(1.5rem, 6vw, 5rem);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 30%, rgba(13,110,253,0.08) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 80% at 10% 80%, rgba(13,110,253,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(13,110,253,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,110,253,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0 1.5rem;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand-mark {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+
+  .event-badge {
+    background: rgba(13,110,253,0.1);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.35rem 0.9rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+  }
+
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0 3rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    max-width: 850px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    margin-top: 1.8rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: rgba(245,240,232,0.65);
+    max-width: 540px;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.75;
+  }
+  .meta-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 4rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 1rem 2.2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+  .btn-primary svg { flex-shrink: 0; }
+
+  .seats-note {
+    font-size: 0.8rem;
+    color: rgba(245,240,232,0.45);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    right: clamp(1.5rem, 6vw, 5rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.5;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section {
+    padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+    position: relative;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0.85;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.8rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── WHAT YOU LEARN ─── */
+  .learn-section {
+    background: #141311;
+  }
+
+  .learn-intro {
+    max-width: 600px;
+    color: rgba(245,240,232,0.6);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 3.5rem;
+  }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .module-card {
+    background: #0f0e0c;
+    padding: 2rem;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .module-card:hover { background: #161512; }
+
+  .module-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(13,110,253,0.08);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    user-select: none;
+  }
+
+  .module-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .module-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .module-points li {
+    font-size: 0.87rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.5;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .module-points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 0.8rem;
+  }
+
+  /* ─── OUTCOMES ─── */
+  .outcomes-section {
+    background: var(--sage);
+    overflow: hidden;
+  }
+  .outcomes-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 100% at 100% 50%, rgba(13,110,253,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .outcomes-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  @media (max-width: 768px) { .outcomes-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+  .outcomes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+  .outcome-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .outcome-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 500;
+    padding-top: 0.15rem;
+    flex-shrink: 0;
+    width: 1.5rem;
+  }
+  .outcome-text {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.8);
+    line-height: 1.55;
+  }
+
+  .bonuses-box {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(13,110,253,0.2);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .bonuses-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .bonus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .bonus-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.87rem;
+    color: rgba(245,240,232,0.75);
+  }
+  .bonus-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: rgba(13,110,253,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    color: var(--gold);
+  }
+
+  /* ─── COACH ─── */
+  .coach-section { background: #0f0e0c; }
+
+  .coach-inner {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .coach-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .coach-avatar-col { display: flex; align-items: center; gap: 1.5rem; }
+  }
+
+  .coach-avatar {
+    width: 180px;
+    height: 220px;
+    background: linear-gradient(135deg, #1e1c19 0%, #2a271f 100%);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .coach-avatar::after {
+    content: 'BP';
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(13,110,253,0.15);
+  }
+  .coach-avatar-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gold);
+  }
+
+  .coach-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    line-height: 1.1;
+  }
+  .coach-title {
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
+  }
+  .coach-bio {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.75;
+    max-width: 620px;
+  }
+  .coach-bio + .coach-bio { margin-top: 0.9rem; }
+
+  .coach-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.45);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── FEATURED STAGES ─── */
+  .stages-section {
+    background: #141311;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stages-inner {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .stages-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+  .stages-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    align-items: center;
+    list-style: none;
+  }
+  .stages-list li {
+    font-size: 0.82rem;
+    color: rgba(245,240,232,0.4);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+    cursor: default;
+  }
+  .stages-list li:hover { color: rgba(245,240,232,0.7); }
+
+  /* ─── CTA FINAL ─── */
+  .final-cta {
+    background: var(--ink);
+    text-align: center;
+    padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(13,110,253,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .final-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .final-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+  .final-heading em { font-style: italic; color: var(--gold); }
+
+  .final-sub {
+    font-size: 1rem;
+    color: rgba(245,240,232,0.5);
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    line-height: 1.65;
+  }
+
+  .final-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 1.15rem 2.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .final-cta-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(13,110,253,0.2);
+  }
+
+  .final-date-note {
+    margin-top: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.3);
+    text-transform: uppercase;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #090908;
+    padding: 2rem clamp(1.5rem, 6vw, 5rem);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(245,240,232,0.25);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+  .footer-zoom {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(245,240,232,0.3);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+  .zoom-dot {
+    width: 6px; height: 6px;
+    background: #2d8cff;
+    border-radius: 50%;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-body > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .eyebrow { animation-delay: 0.1s; }
+  h1 { animation-delay: 0.25s; }
+  .hero-sub { animation-delay: 0.4s; }
+  .hero-meta { animation-delay: 0.55s; }
+  .cta-row { animation-delay: 0.65s; }
+
+  @media (max-width: 600px) {
+    .hero-meta { gap: 1.2rem; }
+    .outcomes-inner { gap: 2rem; }
+    .coach-inner { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-grid-lines"></div>
+
+  <header class="topbar">
+    <div class="brand-mark">BKD Financial Advisory</div>
+    <div class="event-badge">Free Webinar · Apr 18, 2026</div>
+  </header>
+
+  <div class="hero-body">
+    <div class="eyebrow">Live Masterclass</div>
+    <h1>Building a Financial System that <em>Enables Growth</em> &amp; Fundraising</h1>
+    <p class="hero-sub">Move from reactive bookkeeping to proactive financial intelligence. One hour. Practical. Transformational.</p>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Date</span>
+        <span class="meta-value">Saturday, 18 April 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Time</span>
+        <span class="meta-value">11:00 AM – 12:00 PM</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Platform</span>
+        <span class="meta-value">Zoom</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Language</span>
+        <span class="meta-value">English</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://chat.whatsapp.com/HFSAbkA05dLFAQEqcmEpSf" target="_blank" class="btn-primary">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.846l6.137-1.607A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.003-1.373l-.359-.213-3.721.976.993-3.63-.234-.372A9.818 9.818 0 012.182 12c0-5.42 4.398-9.818 9.818-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" fill="currentColor"/></svg>
+      Join WhatsApp Community
+    </a>
+    <span class="seats-note">⟡ Limited seats &nbsp;·&nbsp; Register free</span>
+  </div>
+
+  <div class="scroll-hint">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 8.5L1 3.5h10L6 8.5z"/></svg>
+    Scroll to explore
+  </div>
+</div>
+
+<!-- ═══ WHAT YOU LEARN ═══ -->
+<section class="learn-section">
+  <div class="section-label">Curriculum</div>
+  <h2>What Will You Learn</h2>
+  <p class="learn-intro">Five power-packed modules designed to give you clarity, control, and the confidence to scale your business with financial intelligence.</p>
+
+  <div class="modules-grid">
+    <div class="module-card">
+      <div class="module-num">01</div>
+      <div class="module-title">Financial Foundation</div>
+      <ul class="module-points">
+        <li>Bookkeeping system vs. a financial operating system</li>
+        <li>Three questions your financial system must answer — right now</li>
+        <li>Where are we? Where are we going? What next?</li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">02</div>
+      <div class="module-title">Cash Flow Architecture</div>
+      <ul class="module-points">
+        <li>Identifying cash conversion cycles in your business model</li>
+        <li>Map your own cycle: from expense to revenue receipt</li>
+        <li>Plugging cash leaks before they become crises</li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">03</div>
+      <div class="module-title">Growth Metrics &amp; KPIs</div>
+      <ul class="module-points">
+        <li>Vanity metrics vs. actionable financial metrics</li>
+        <li>Unit economics — anchor every decision in unit profitability</li>
+        <li>Building a KPI dashboard for your business model</li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">04</div>
+      <div class="module-title">Financial Planning &amp; Scenario Modelling</div>
+      <ul class="module-points">
+        <li>Annual budgeting vs. rolling forecasts — which to use when</li>
+        <li>Decision gates: financial triggers to accelerate, hold, or cut</li>
+        <li>12-month financial model you'll build live</li>
+      </ul>
+    </div>
+
+    <div class="module-card">
+      <div class="module-num">05</div>
+      <div class="module-title">Systems, Tools &amp; Automation</div>
+      <ul class="module-points">
+        <li>Financial tech stack — tools that save hours every week</li>
+        <li>When and how to hire a CFO / Fractional CFO</li>
+        <li>Tech stack gap analysis for your stage</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUTCOMES ═══ -->
+<section class="outcomes-section">
+  <div class="outcomes-inner">
+    <div>
+      <div class="section-label">What You Take Home</div>
+      <h2>Your Outcomes</h2>
+      <div class="outcomes-list">
+        <div class="outcome-item">
+          <span class="outcome-num">01</span>
+          <span class="outcome-text">A clear picture of the financial operating system your business needs</span>
+        </div>
+        <div class="outcome-item">
+          <span class="outcome-num">02</span>
+          <span class="outcome-text">A defined KPI dashboard tailored to your specific business model</span>
+        </div>
+        <div class="outcome-item">
+          <span class="outcome-num">03</span>
+          <span class="outcome-text">A working financial model for the next 12 months</span>
+        </div>
+        <div class="outcome-item">
+          <span class="outcome-num">04</span>
+          <span class="outcome-text">A tech stack gap analysis with actionable recommendations</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">Included Bonuses</div>
+      <h2>Free Resources</h2>
+      <div class="bonuses-box">
+        <div class="bonuses-title">Every Attendee Receives</div>
+        <div class="bonus-list">
+          <div class="bonus-item">
+            <div class="bonus-icon">📊</div>
+            <span>Downloadable Profit &amp; Loss template (Excel-ready)</span>
+          </div>
+          <div class="bonus-item">
+            <div class="bonus-icon">📋</div>
+            <span>Balance Sheet &amp; Cash Flow statement templates</span>
+          </div>
+          <div class="bonus-item">
+            <div class="bonus-icon">📈</div>
+            <span>KPI tracker template for your business model</span>
+          </div>
+          <div class="bonus-item">
+            <div class="bonus-icon">💬</div>
+            <span>30-minute live Q&amp;A — get your questions answered</span>
+          </div>
+          <div class="bonus-item">
+            <div class="bonus-icon">🤝</div>
+            <span>Access to private WhatsApp peer community</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COACH ═══ -->
+<section class="coach-section">
+  <div class="section-label">Your Coach</div>
+  <div class="coach-inner">
+    <div class="coach-avatar-col">
+      <div class="coach-avatar">
+        <div class="coach-avatar-accent"></div>
+      </div>
+    </div>
+    <div>
+      <div class="coach-name">Baskar Perumal</div>
+      <div class="coach-title">Finance &amp; Strategy Consultant</div>
+      <p class="coach-bio">Baskar Perumal is a Finance &amp; Strategy Consultant working among start-ups, SMEs and quasi-corporates, providing multiple business services. A post-graduate in Business Administration with a career spanning 30+ years, he has worked across diverse industries — steel, garment, foundry, management consulting, and angel investment networks.</p>
+      <p class="coach-bio" style="margin-top:0.9rem;">Active in India's dynamic entrepreneurial ecosystem, Baskar helps founders build financial clarity, fundraising readiness, and scalable governance frameworks. His expertise spans end-to-end startup fundraising, pitch refinement, due diligence, and deal structuring.</p>
+      <div class="coach-stats">
+        <div class="stat">
+          <div class="stat-val">30+</div>
+          <div class="stat-lbl">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">100+</div>
+          <div class="stat-lbl">Founders Coached</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">6</div>
+          <div class="stat-lbl">Featured Stages</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAGES ═══ -->
+<section class="stages-section">
+  <div class="stages-inner">
+    <div class="stages-label">Featured On</div>
+    <ul class="stages-list">
+      <li>TNRISE</li>
+      <li>StartupTN</li>
+      <li>Rotary International</li>
+      <li>Business Studio — TNCC&amp;I</li>
+      <li>Export Promotion Council — TNCC&amp;I</li>
+      <li>Handicrafts Service Centre</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ WHO SHOULD ATTEND ═══ -->
+<section style="background:#0f0e0c;">
+  <div class="section-label">Who This Is For</div>
+  <h2 style="max-width:500px;margin-bottom:2.5rem;">Is This Webinar For You?</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;">
+    <div style="background:#141311;border:1px solid var(--border);border-radius:4px;padding:1.5rem;">
+      <div style="font-size:1.8rem;margin-bottom:0.75rem;">🚀</div>
+      <div style="font-weight:600;margin-bottom:0.4rem;font-size:0.95rem;">Founders</div>
+      <div style="font-size:0.82rem;color:rgba(245,240,232,0.5);line-height:1.55;">Building or scaling a startup and need financial clarity</div>
+    </div>
+    <div style="background:#141311;border:1px solid var(--border);border-radius:4px;padding:1.5rem;">
+      <div style="font-size:1.8rem;margin-bottom:0.75rem;">🏢</div>
+      <div style="font-weight:600;margin-bottom:0.4rem;font-size:0.95rem;">Business Owners</div>
+      <div style="font-size:0.82rem;color:rgba(245,240,232,0.5);line-height:1.55;">Running an SME and ready to move beyond basic bookkeeping</div>
+    </div>
+    <div style="background:#141311;border:1px solid var(--border);border-radius:4px;padding:1.5rem;">
+      <div style="font-size:1.8rem;margin-bottom:0.75rem;">💡</div>
+      <div style="font-weight:600;margin-bottom:0.4rem;font-size:0.95rem;">Aspiring Entrepreneurs</div>
+      <div style="font-size:0.82rem;color:rgba(245,240,232,0.5);line-height:1.55;">Planning to launch and want to build right from day one</div>
+    </div>
+    <div style="background:#141311;border:1px solid var(--border);border-radius:4px;padding:1.5rem;">
+      <div style="font-size:1.8rem;margin-bottom:0.75rem;">📊</div>
+      <div style="font-weight:600;margin-bottom:0.4rem;font-size:0.95rem;">Finance Professionals</div>
+      <div style="font-size:0.82rem;color:rgba(245,240,232,0.5);line-height:1.55;">Advisors who want a strategic growth-oriented framework</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="final-eyebrow">Reserve Your Spot — It's Free</div>
+  <h2 class="final-heading">Your Financial System Should <em>Accelerate</em> Growth</h2>
+  <p class="final-sub">Join Baskar Perumal for an hour that rewires how you think about money in your business. Walk away with templates, a model, and a community.</p>
+
+  <a href="https://chat.whatsapp.com/HFSAbkA05dLFAQEqcmEpSf" target="_blank" class="final-cta-btn">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.846l6.137-1.607A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.003-1.373l-.359-.213-3.721.976.993-3.63-.234-.372A9.818 9.818 0 012.182 12c0-5.42 4.398-9.818 9.818-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" fill="currentColor"/></svg>
+    Join WhatsApp Community — Free
+  </a>
+
+  <div class="final-date-note">Saturday · 18 April 2026 · 11:00 AM – 12:00 PM · Zoom</div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-copy">© 2026 Baskar Perumal · BKD Financial Advisory</div>
+  <div class="footer-zoom">
+    <div class="zoom-dot"></div>
+    Hosted on Zoom
+  </div>
+</footer>
+
+</body>
+</html>
