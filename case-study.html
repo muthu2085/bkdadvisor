@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | BKD Advisors</title>
+    <link rel="stylesheet" href="style.css?v=7.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E3D9EBESFQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E3D9EBESFQ');
+    </script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="./assets/Header-logo-.png" alt="BKD Logo"></a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="who-we-are.html">Who We Are</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">What We Do</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="startup-fundraising.html">Startup Fundraising</a></li>
+                            <li><a href="management-consulting.html">Management Consulting</a></li>
+                            <li><a href="sustainability-consulting.html">Sustainability Consulting</a></li>
+                            <li><a href="business-lending.html">Business Lending</a></li>
+                            <li><a href="leadership-academy.html">Leadership Academy</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown active">
+                        <a href="#" class="active">What We Think</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="case-study.html" class="active">Case Study</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="contact-us.html" class="btn-connect">
+                    Need Help
+                    <span class="icon-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Case Study Hero -->
+        <section class="case-hero">
+            <div class="case-hero-container reveal fade-bottom">
+                <h1>Case Study</h1>
+                <p>Empowering local ecosystems through strategic investment and mentorship.</p>
+                <a href="contact-us.html" class="btn-touch" style="margin-top: 32px;">
+                    Get in Touch
+                    <span class="icon-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Case Study Grid Section -->
+        <section class="case-study-grid-section">
+            <div class="case-study-grid-container">
+                <div class="case-study-grid">
+                    <!-- Case 1 -->
+                    <div class="case-study-card reveal fade-bottom">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop"
+                                alt="Angel Investment">
+                        </div>
+                        <div class="case-card-content">
+                            <h3>Angel Investment for Startups Tier II & Tier III Region</h3>
+                            <p>Nativelead Foundation and it's investment arm Native Angel Network (NAN) is an initiative by the local community of Madurai to build startup ecosystem at Tier II and Tier III regions.</p>
+                            <button class="btn-view-more" onclick="openCaseModal('case1')">
+                                View More
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="case-study-card reveal fade-bottom" data-delay="100">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop"
+                                alt="Founder Agreement">
+                        </div>
+                        <div class="case-card-content">
+                            <h3>Founder Agreement and Resolving Founder Conflict</h3>
+                            <p>HealBridge a health tech startup faced founder conflict due to unclear role responsibilities. BKD Advisors facilitated resolution through documentation.</p>
+                            <button class="btn-view-more" onclick="openCaseModal('case2')">
+                                View More
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="case-study-card reveal fade-bottom" data-delay="200">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011&auto=format&fit=crop"
+                                alt="Valuation Case Study">
+                        </div>
+                        <div class="case-card-content">
+                            <h3>Valuation: Too Little or Too Much?</h3>
+                            <p>LogiFlow Technologies, a B2B SaaS startup, faced the dilemma of "right dilution" during their seed round negotiation.</p>
+                            <button class="btn-view-more" onclick="openCaseModal('case3')">
+                                View More
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Modals -->
+        <div id="caseModal" class="case-modal">
+            <div class="modal-content-wrapper">
+                <div class="close-modal" onclick="closeCaseModal()">&times;</div>
+                <div class="modal-scroll-area">
+                    <div id="modalBody" class="modal-body">
+                        <!-- Content will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Case Contents -->
+        <div style="display: none;">
+            <div id="case1-content">
+                <div class="case-full-width" style="border-top: none; padding-top: 0;">
+                    <div class="case-full-image-wrapper" style="max-width: 600px; margin: 0 auto 40px;">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop" alt="Angel Investment">
+                    </div>
+                    <h2 class="content-main-title">Angel Investment for Startups Tier II & Tier III Region</h2>
+                    
+                    <p>Nativelead Foundation and it's investment arm Native Angel Network (NAN) is an initiative by the local community of Madurai to build startup ecosystem at Tier II and Tier III regions.</p>
+                    
+                    <p>An excellent case in study is Sai Happy Farms, a Madurai based poultry brand is India's first brand selling free range eggs. Free range refers to the traditional way raising hens by letting them roam free and forage as they liked. One of the co-founder a serial entrepreneur is has been manufacturing and selling herbals of multiple varieties. He used to feed the hens at his backyard with those herbals and found to be with extra minerals and nutrients. He met his co-founder through social media who was also attempting a similar concept. Thus, this novel concept matured into a startup in 2012. Natural and nutritious feeding along with following The Royal Society for the Prevention of Cruelty to Animals that defines space for each bird.</p>
+                    
+                    <p>As a startup with a completely unique concept and with no support from traditional bankers it was struggling financially. NAN identified this startup at an event in Madurai, and invested Rs 50.00 lakhs which made matters smoother for the startup. Now, the startup has scaled with its eggs being available at pan-India scale. As, Vice-President (Operations) at NAN, I had worked on this first assignment for NAN and of course, for me too. That was an incredible opportunity to learn the angel investment process.</p>
+                </div>
+            </div>
+
+            <div id="case2-content">
+                <div class="case-full-width" style="border-top: none; padding-top: 0;">
+                    <div class="case-full-image-wrapper" style="max-width: 600px; margin: 0 auto 40px;">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop" alt="Founder Agreement">
+                    </div>
+                    <h2 class="content-main-title">Founder Agreement and Resolving Founder Conflict</h2>
+                    
+                    <p>HealBridge a health tech startup faced founder conflict due to unclear role responsibilities. The startup was building a digital health platform solving patient-side healthcare access problems by bringing essential services like medicines, diagnostics, and nursing to the user's homes. The same was founded by two co-founders.</p>
+                    
+                    <p>As the company began growing, both founders started overlapping on product decisions, partner discussions, and hiring, which created confusion about who was accountable for what domain. This ambiguity lead to friction because each founder start questioning contribution, authority, and fairness of the other.</p>
+                    
+                    <p>BKD Advisors facilitated structured conversations between the founders towards resolving the issue by mapping each founder's responsibilities clearly. Because the responsibilities had only been discussed verbally, the team had no agreed framework to settle the disagreement. A strong founder agreement could have prevented much of this conflict by clearly defining responsibilities and dispute resolution methods.</p>
+                    
+                    <p>The founders' agreement was prepared by BKD Advisors by clearly defining responsibilities, ownership, voting rights, vesting, and dispute resolution methods. Fair process for exit, termination, and governance was also included. Each founder's domain was documented, with one taking primary responsibility for technology and product, and the other for partnerships, administration, and fundraising support. In investor conversations, this kind of documentation will signal maturity and reduce due diligence risk.</p>
+                    
+                    <p>The key takeaway is that the founder agreement is not just a legal formality; it is a practical tool for preventing conflict and preserving execution speed.</p>
+                </div>
+            </div>
+
+            <div id="case3-content">
+                <div class="case-full-width" style="border-top: none; padding-top: 0;">
+                    <div class="case-full-image-wrapper" style="max-width: 600px; margin: 0 auto 40px;">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011&auto=format&fit=crop" alt="Valuation Case Study">
+                    </div>
+                    <h2 class="content-main-title">Valuation: Too Little or Too Much?</h2>
+                    
+                    <p>One of our clients, LogiFlow Technologies, is a B2B SaaS startup in Chennai that provides an AI-driven logistics optimization platform for startups and SMEs.</p>
+                    
+                    <p>The startup has bootstrapped an MVP, onboarded 10 paying customers, and now want to raise a seed round. They approached BKD Advisors with one dominating question: "What valuation can we get?" Our response was: "Valuation is important, but the bigger question is, how much capital do you really need, and what does 'right dilution' look like for your long term plan?"</p>
+                    
+                    <p>When investor conversations start, one prominent seed fund network was interested and proposed an investment of ₹2.5 crore with an implied dilution of 25%. The founders felt this "undervalues" their startup and at first, refuse to move above 18% dilution. The deal got struck.</p>
+                    
+                    <p>BKD Advisors reframed the situation:</p>
+                    <ul style="margin-bottom: 25px; padding-left: 20px; color: #475569; font-size: 18px; line-height: 1.8;">
+                        <li style="margin-bottom: 10px;">First, we benchmarked valuation ranges for comparable B2B SaaS startups and showed that the offer is within market norms.</li>
+                        <li>Second, we showed the founders a side by side view: slightly higher dilution today versus the cost of delaying the round, reducing runway, or doing a future emergency round at a much lower valuation.</li>
+                    </ul>
+                    
+                    <p>Meanwhile, the founders were advised to focus on creating interest from multiple investors and be flexible within a reasonable valuation band. Made the founders understand that for seed round, most markets see "normal" dilution is 15% - 25%, with 12 – 18 months runway and it's not all about the valuation and the ownership percentage but the long term goals.</p>
+                    
+                    <p>The founders re engaged with the lead investor. They accepted a structure with 23% dilution and raised to survive 12-18 months.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col about">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="./assets/Header-logo-.png" alt="BKD Logo"></a>
+                </div>
+                <p class="footer-desc">
+                    We bring the expertise and capital that fuel your growth. Collaboration with us accelerates your
+                    success and unlocks new opportunities.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1C4NS9KCcs/" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg></a>
+                    <a href="https://www.linkedin.com/company/bkd-advisors/" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg></a>
+                    <a href="https://x.com/BKDAdvisors" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg></a>
+                    <a href="https://www.instagram.com/bkd_advisors/" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Link</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="who-we-are.html">Who We Are</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="case-study.html">Case Study</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>What We Do</h4>
+                <ul class="footer-links">
+                    <li><a href="startup-fundraising.html">Startup Fundraising</a></li>
+                    <li><a href="management-consulting.html">Management Consulting</a></li>
+                    <li><a href="sustainability-consulting.html">Sustainability Consulting</a></li>
+                    <li><a href="business-lending.html">Business Lending</a></li>
+                    <li><a href="leadership-academy.html">Leadership Academy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Connect with Us</h4>
+                <div class="contact-info">
+                    <div class="contact-item"><strong>Phone:</strong> <a href="tel:+919943766959" style="color: inherit; text-decoration: none;">+91 99437 66959</a></div>
+                    <div class="contact-item"><strong>Email:</strong> 
+                        <a href="mailto:baskar@bkdadvisors.in" style="color: inherit; text-decoration: none;">baskar@bkdadvisors.in</a>, 
+                        <a href="mailto:contact@bkdadvisors.in" style="color: inherit; text-decoration: none;">contact@bkdadvisors.in</a>
+                    </div>
+                    <div class="contact-item"><strong>Address:</strong> No: 61, Swami Vivekanadha Nagar, Sixty Feet Road, Sambakulam, Madurai - 625007, Tamil Nadu.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p style="margin: 0;">Design & Maintain with Care | <a href="https://cbraindia.com/" style="color: inherit; text-decoration: none;">Cbra India</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=7.0"></script>
+</body>
+
+</html>

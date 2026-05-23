@@ -1,0 +1,82 @@
+
+> bkd-website@1.0.0 build
+> vite build
+
+[36mvite v8.0.10 [32mbuilding client environment for production...[36m[39m
+[2Ktransforming...<script src="script.js?v=7.0"> in "/case-study.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/sustainability-consulting.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/business-lending.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/management-consulting.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/startup-fundraising.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/leadership-academy.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/gallery.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/contact-us.html" can't be bundled without type="module" attribute
+<script src="script.js"> in "/who-we-are.html" can't be bundled without type="module" attribute
+✓ 13 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/about page getfive logo2-C-DMvi8c.jpg                   4.18 kB
+dist/assets/native-special logo 06-DsbNEF8s.jpg                     4.21 kB
+dist/assets/about page startup-grind logo img5-3VYTDXJP.jpg         4.65 kB
+dist/assets/native-special logo 03-CGEXszOM.jpg                     4.76 kB
+dist/assets/native-special logo 04-BlRkUNoB.jpg                     4.96 kB
+dist/assets/native-special logo 01-CCPB3puc.jpg                     5.23 kB
+dist/assets/about page business-studio logo img4-DXoBAzqC.jpg       5.69 kB
+dist/assets/native-special logo 08-DwtW5VrC.jpg                     5.75 kB
+dist/assets/about page  naive-lead-logo1-DLJgG67N.jpg               5.82 kB
+dist/contact-us.html                                               12.49 kB │ gzip:  2.94 kB
+dist/gallery.html                                                  15.63 kB │ gzip:  2.98 kB
+dist/leadership-academy.html                                       19.22 kB │ gzip:  4.58 kB
+dist/business-lending.html                                         19.67 kB │ gzip:  4.74 kB
+dist/case-study.html                                               20.41 kB │ gzip:  5.44 kB
+dist/sustainability-consulting.html                                20.74 kB │ gzip:  4.86 kB
+dist/startup-fundraising.html                                      20.86 kB │ gzip:  5.02 kB
+dist/management-consulting.html                                    21.69 kB │ gzip:  5.08 kB
+dist/who-we-are.html                                               36.93 kB │ gzip: 11.51 kB
+dist/assets/Header-logo--soB8BUFu.png                              45.66 kB
+dist/assets/Gallery 12-C-9ujijL.jpeg                               55.28 kB
+dist/index.html                                                    75.72 kB │ gzip: 19.36 kB
+dist/assets/gallery img2-D2IkETp6.jpeg                            101.43 kB
+dist/assets/gallery img1-CpuWabXo.jpeg                            136.48 kB
+dist/assets/Gallery 2-DVmCLYU-.jpeg                               146.82 kB
+dist/assets/Gallery 1-iQKSOSYh.jpeg                               152.77 kB
+dist/assets/Galleryyy01-Ds5w0itY.jpg                              173.58 kB
+dist/assets/gallery img5-Dlp0SoJo.jpeg                            175.99 kB
+dist/assets/Gallery 9-CZP3k3IW.jpeg                               180.03 kB
+dist/assets/gallery img6-Bs5lgDEI.jpeg                            224.71 kB
+dist/assets/Gallery 5-DS9lGNk_.jpg                                234.36 kB
+dist/assets/Gallery 7-GMyaTlxD.jpg                                236.13 kB
+dist/assets/Gallery 10-DVeQqg0H.jpg                               246.16 kB
+dist/assets/gallery img3-D8Q3oSV-.jpeg                            254.34 kB
+dist/assets/gallery img4-CjSjg0Ix.jpeg                            254.76 kB
+dist/assets/Sanchita-img-BB89F-1Z.png                             261.10 kB
+dist/assets/Startup about img-CGqhmXxN.jpg                        266.75 kB
+dist/assets/Basker-Perumal-img-CJVuF0Hf.png                       311.39 kB
+dist/assets/Bhama-Devi-img-BL17YtyP.png                           316.66 kB
+dist/assets/Gallery 4-BLE6tIM_.jpg                                331.98 kB
+dist/assets/Gallery 6-B2x3bAa9.jpg                                366.40 kB
+dist/assets/Management-img1-9MhjJYsL.png                          430.64 kB
+dist/assets/Gallery 3-DVymX1wL.jpeg                               481.91 kB
+dist/assets/Management-img2-X-zhMHw6.png                          487.44 kB
+dist/assets/Startup2-w4P_9ab0.png                                 532.60 kB
+dist/assets/Bussiness lending1-CeOoeswR.png                       546.83 kB
+dist/assets/Home-about-final-DqfcBKME.png                         552.69 kB
+dist/assets/Leadershipimg1-D0ADXaRm.png                           576.96 kB
+dist/assets/Bkd-who-we-are-img-DrDmvyvD.png                       580.20 kB
+dist/assets/Management-img3-pSVJ1hFm.png                          594.47 kB
+dist/assets/Startup3-BCUZzcgv.png                                 598.34 kB
+dist/assets/Startup4-CEtinDhz.png                                 641.29 kB
+dist/assets/Sustainability-img2-B5_LX_kU.png                      665.99 kB
+dist/assets/Startup1-C-47qh-R.png                                 680.99 kB
+dist/assets/Gallery 8-B2zMB3Go.jpg                                876.67 kB
+dist/assets/business-lending-service-img-BLJPof2W.png           1,068.74 kB
+dist/assets/sustainability-consulting-service-img-CbYy5eLN.png  1,150.55 kB
+dist/assets/Leadership-service-img-D3fAJJcA.png                 1,328.81 kB
+dist/assets/Why choose-adQkj3qH.png                             1,402.72 kB
+dist/assets/management-consulting-service-img-CKdfbYzd.png      1,455.65 kB
+dist/assets/Ban-01-D2WuLJK5.png                                 2,262.11 kB
+dist/assets/Gallery 11-2V5fSetT.jpg                             4,701.20 kB
+dist/assets/caseStudy-C6I9AuCx.css                                 58.43 kB │ gzip: 10.39 kB
+
+[32m✓ built in 1.64s[39m
