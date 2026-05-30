@@ -98,114 +98,159 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.body.appendChild(whatsappBtn);
 
-    // FormSubmit AJAX handling for all forms
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        // Ensure all inputs have name attributes
-        const inputs = form.querySelectorAll('input:not([type="submit"]), textarea, select');
-        inputs.forEach((input, index) => {
-            if (!input.name) {
-                let generatedName = input.id || input.placeholder || `field_${index}`;
-                // Clean up placeholder text if used as name
-                generatedName = generatedName.replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase();
-                if (!generatedName) generatedName = `field_${index}`;
-                input.name = generatedName;
-            }
-        });
+    // FormSubmit AJAX handling with Centralized Configuration
+    const configScript = document.createElement('script');
+    configScript.src = 'FormConfiguration.js';
+    configScript.onload = () => {
+        if (typeof FormConfig === 'undefined') {
+            console.error('FormConfig is not defined. Please check FormConfiguration.js');
+            return;
+        }
 
-        // Add hidden fields if they don't exist
-        const hiddenFields = [
-            { name: '_subject', value: `New Submission from ${document.title}` },
-            { name: '_template', value: 'table' },
-            { name: '_captcha', value: 'false' },
-            { name: '_bcc', value: '' }, // Add secondary email here if needed
-            { name: '_autoresponse', value: 'Thank you for your message. We have received it and will get back to you shortly.' }
-        ];
-
-        hiddenFields.forEach(field => {
-            if (!form.querySelector(`input[name="${field.name}"]`)) {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = field.name;
-                input.value = field.value;
-                form.appendChild(input);
-            }
-        });
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            // Check Scheduling
+            const now = new Date();
+            const startDate = new Date(FormConfig.schedule.start_date);
+            const endDate = new Date(FormConfig.schedule.end_date);
             
-            const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('input[type="submit"]');
-            const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
-            
-            if (submitBtn) {
-                submitBtn.innerHTML = 'Sending...';
-                submitBtn.disabled = true;
+            const isWithinSchedule = now >= startDate && now <= endDate;
+            if (!FormConfig.schedule.is_active || !isWithinSchedule) {
+                const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('input[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.5';
+                    submitBtn.style.cursor = 'not-allowed';
+                }
+                
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'form-submit-msg error';
+                msgDiv.style.marginTop = '15px';
+                msgDiv.style.color = '#ef4444';
+                msgDiv.style.textAlign = 'center';
+                msgDiv.style.fontWeight = '600';
+                msgDiv.textContent = FormConfig.schedule.expired_message;
+                form.appendChild(msgDiv);
+                
+                // Prevent submission
+                form.addEventListener('submit', (e) => e.preventDefault());
+                return; // Skip further initialization for this form
             }
 
-            const formData = new FormData(form);
+            // Ensure all inputs have name attributes
+            const inputs = form.querySelectorAll('input:not([type="submit"]), textarea, select');
+            inputs.forEach((input, index) => {
+                if (!input.name) {
+                    let generatedName = input.id || input.placeholder || `field_${index}`;
+                    generatedName = generatedName.replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase();
+                    if (!generatedName) generatedName = `field_${index}`;
+                    input.name = generatedName;
+                }
+            });
 
-            // FormSubmit blocks AJAX from localhost with CORS. Mocking success for local testing.
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                setTimeout(() => {
-                    showFormMessage('Success! Your message has been sent successfully.', 'success');
-                    form.reset();
+            // Prepare emails: FormSubmit endpoint takes ONE email, the rest go to _cc
+            let rawToEmails = FormConfig.adminNotification.to ? FormConfig.adminNotification.to.split(',').map(e => e.trim()).filter(e => e) : [];
+            let endpointEmail = rawToEmails.length > 0 ? rawToEmails[0] : 'contact@bkdadvisors.in';
+            let ccEmails = rawToEmails.slice(1).join(',');
+
+            // Add hidden fields from configuration
+            const hiddenFields = [
+                { name: '_subject', value: `New Submission from ${document.title}` },
+                { name: '_template', value: FormConfig.adminNotification.template || 'table' },
+                { name: '_captcha', value: 'false' },
+                { name: '_bcc', value: FormConfig.adminNotification.bcc },
+                { name: '_cc', value: ccEmails }, // Remaining emails added as CC
+                { name: '_autoresponse', value: FormConfig.visitorNotification.message },
+                { name: '_sender', value: FormConfig.adminNotification.fromName },
+                { name: 'System_Message', value: FormConfig.footerMessage }
+            ];
+
+            hiddenFields.forEach(field => {
+                if (field.value && !form.querySelector(`input[name="${field.name}"]`)) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = field.name;
+                    input.value = field.value;
+                    form.appendChild(input);
+                }
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('input[type="submit"]');
+                const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+                
+                if (submitBtn) {
+                    submitBtn.innerHTML = 'Sending...';
+                    submitBtn.disabled = true;
+                }
+
+                const formData = new FormData(form);
+
+                // Mocking success for local testing (localhost, 127.0.0.1, or direct file access).
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+                    setTimeout(() => {
+                        showFormMessage('Success! Your message has been sent successfully. (Local Test)', 'success');
+                        form.reset();
+                        if (submitBtn) {
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.disabled = false;
+                        }
+                    }, 1500);
+                    return;
+                }
+
+                fetch(`https://formsubmit.co/ajax/${endpointEmail}`, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success === 'true' || data.success === true) {
+                        showFormMessage('Success! Your message has been sent successfully.', 'success');
+                        form.reset();
+                    } else {
+                        showFormMessage('Oops! Something went wrong. Please try again.', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showFormMessage('Oops! Something went wrong. Please try again.', 'error');
+                })
+                .finally(() => {
                     if (submitBtn) {
                         submitBtn.innerHTML = originalBtnText;
                         submitBtn.disabled = false;
                     }
-                }, 1500);
-                return;
-            }
+                });
 
-            fetch('https://formsubmit.co/ajax/contact@bkdadvisors.in', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success === 'true' || data.success === true) {
-                    showFormMessage('Success! Your message has been sent successfully.', 'success');
-                    form.reset();
-                } else {
-                    showFormMessage('Oops! Something went wrong. Please try again.', 'error');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showFormMessage('Oops! Something went wrong. Please try again.', 'error');
-            })
-            .finally(() => {
-                if (submitBtn) {
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.disabled = false;
+                function showFormMessage(text, type) {
+                    let msgDiv = form.querySelector('.form-submit-msg');
+                    if (!msgDiv) {
+                        msgDiv = document.createElement('div');
+                        msgDiv.className = 'form-submit-msg';
+                        msgDiv.style.marginTop = '15px';
+                        msgDiv.style.fontSize = '15px';
+                        msgDiv.style.fontWeight = '600';
+                        msgDiv.style.textAlign = 'center';
+                        msgDiv.style.transition = 'opacity 0.4s ease';
+                        form.appendChild(msgDiv);
+                    }
+                    msgDiv.style.color = type === 'success' ? '#10b981' : '#ef4444';
+                    msgDiv.style.opacity = '1';
+                    msgDiv.textContent = text;
+                    
+                    setTimeout(() => {
+                        msgDiv.style.opacity = '0';
+                    }, 5000);
                 }
             });
-
-            function showFormMessage(text, type) {
-                let msgDiv = form.querySelector('.form-submit-msg');
-                if (!msgDiv) {
-                    msgDiv = document.createElement('div');
-                    msgDiv.className = 'form-submit-msg';
-                    msgDiv.style.marginTop = '15px';
-                    msgDiv.style.fontSize = '15px';
-                    msgDiv.style.fontWeight = '600';
-                    msgDiv.style.textAlign = 'center';
-                    msgDiv.style.transition = 'opacity 0.4s ease';
-                    form.appendChild(msgDiv);
-                }
-                msgDiv.style.color = type === 'success' ? '#10b981' : '#ef4444';
-                msgDiv.style.opacity = '1';
-                msgDiv.textContent = text;
-                
-                setTimeout(() => {
-                    msgDiv.style.opacity = '0';
-                }, 5000);
-            }
         });
-    });
+    };
+    document.head.appendChild(configScript);
 });
 
